@@ -16,7 +16,9 @@ Route::middleware([
 });
 
 
+Route::middleware('api')->group(function () {
     Route::apiResource('activity-logs', ActivityLogController::class);
+});
 
 Route::post('register',[AuthController::class,'register']);
 Route::post('login',[AuthController::class,'login']);
